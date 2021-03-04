@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+input[type=text], input[type=password] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+}
+input[type=text]:focus, input[type=password]:focus{background-color:lightblue}
+button {
+ 
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+}
+</style>
+</head>
+<body style="background-image:url('foodq.jpg');background-size:100%;background-repeat:no-repeat">
+  <center>
+    <h1 style="font-size: 50px;color:white" class="animated  wobble delay-0.5s">For Ordering Food You Need To Login</h1>
+  </center>
+  <div class="row">
+    <div class="col-sm-4"><br>
+      <img src="photo2.jpg" style="width:70%" class="animated 5 jackInTheBox delay-2s">
+    </div>
+  <center><div class="alert alert-success alert-dismissible" style="width:40%;background-color:black" >
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+   
+   <h2>Login Form</h2>
+  <form action="/action_page.php" style="width:80%">
+     <div style="width:80%;height:80%;background-color:black">
+       <label for="uname"  class="animated bounceInRight delay-0.8s"><b>Email</b></label>
+       <input type="text" placeholder="Enter Email" name="uname" required  class="animated bounceInRight delay-0.9s">
+
+       <label for="psw"  class="animated bounceInRight delay-1.1s"><b>Password</b></label>
+      <input class="animated bounceInRight delay-1.1s" type="password" placeholder="Enter Password" name="psw" required>
+        
+      <a href="practice.html"><button class="animated bounceInRight delay-1.2s" type="button" style="background-color:green">Login</button></a>
+    <label>
+       <input class="animated bounceInRight delay-1.3s" type="checkbox" checked="checked" name="remember">
+       <span class="animated bounceInRight delay-1.3s"> Remember me</span><br>  
+       <span class="animated bounceInRight delay-1.5s psw">Forgot <a href="#" style="float:right">password?</a></span>
+    </label><br>
+    <a class="animated bounceInRight delay-1s" href="https://en-gb.facebook.com/login/"><img src="fb.png" class="img-circle" height="10%" width="10%"/></a>
+    <a class="animated bounceInRight delay-1s" href="https://en-gb.google.com/login/"><img src="google.jpg" class="img-circle" height="10%" width="10%"/></a>
+     <a  class="animated bounceInRight delay-1s" href="#"><img src="icon.jpg" class="img-rounded" height="10%" width="30%"/></a><br><br>
+  </form>
+
+  <p class="animated bounceInRight delay-1.9s"> Don't have an account?<a href="signup.html">Create an Account</a></p>
+</div>
+</center>
+    </div>
+
+</body>
+</html>

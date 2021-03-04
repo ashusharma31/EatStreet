@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+<script>
+
+  $ (function() {
+var body = $(‘.container’);
+var backgrounds = new Array(
+‘url(food5.jpeg)’,
+‘url(food7.jpeg)’
+);
+var current = 0;
+
+function nextBackground() {
+body.css(
+‘background’,
+backgrounds[current = ++current % backgrounds.length]
+);
+
+setTimeout(nextBackground, 10000);
+}
+setTimeout(nextBackground, 10000);
+
+body.css(‘background’, backgrounds[0]);
+});
+</script>
+  <style>
+  /* Form Styles */
+@element form {
+  $this,
+  $this * {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+  }
+  $this {
+    font-size: 10pt;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    transition: opacity .3s ease-in-out;
+  }
+  $this:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  $this fieldset {
+    border: none;
+    padding: 0;
+  }
+  $this select,
+  $this .split-input > input,
+  $this .split-input > select,
+  $this input,
+  $this textarea {
+    float: left;
+    margin: 0 0 2% 0;
+    margin-bottom: 2%;
+    padding: 5px 8px;
+    width: 49%;
+    height: 40px;
+    outline: none;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 2px;
+    background: rgba(255,255,255,.5);
+    box-shadow: rgba(0,0,0,.15) 0 1px 0;
+    color: rgba(0,0,0,.7);
+    font-weight: 400;
+    font-size: 12pt;
+    transition: all .2s ease-in-out;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  $this select:focus,
+  $this .split-input > *:focus,
+  $this input:focus {
+    outline: none;
+    border-color: orange;
+    box-shadow: #fc0 0 0 3px;
+  }
+  $this select,
+  $this .split-input select {
+    color: rgba(0,0,0,.5);
+    background: rgba(255,255,255,.5);
+    padding-right: 1.5em;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAjElEQVR4Ae2QxbkCARDGMlsB2sxe1ovCKR0uuOTh9jL3fH+Gu/DPP236dG+8Pm1IGTJmdMONGZJCQs78xstJAOJGVU6wJmd2lWRGzg5BcYVqRkHAoepS0aHGAz3KV/mao6ryT5qSQCmY6YsdD5QoCZQoCZSoG1bpGle5Rii3NI6v8jVO0Cwv+OefT2IBOYykNaMbWusAAAAASUVORK5CYII=') !important;
+    background-repeat: no-repeat !important;
+    background-position: calc(100% - .5em) 50% !important;
+    background-size: 12px !important;
+    text-indent: 0.01px;
+    text-overflow: '';
+  }
+  $this select:active,
+  $this .split-input select:active {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAABBklEQVR4Ae3PQY7TQBCG0VfNLLgGd2SBhO207SBxuZgzcAsWIxfbHiuTFsnsyCd505Kf/gof1P8NPaHfX3z26rFe/IlfX7N6yT2kcFfFa9TYPuWYJw8Vc6yxyTCp7l9ULTIuIOo+3eVkWVSIDQg1x3+mMlZVthAlTyYSIZuvfWkLlpjt0ELIasq4AbUvaVEb9qKpRN3HkILDr8eXWLPa34NEMeegs4g4O7UMsTmWszHjBpRWJ4fiwrGiGt87Datqpw9RzIbri7RHdSFYDOKwKONscqwDRS4xvF3kbJJ96OqBukf1IVhzAOJshDuhKJb8Tvww2d0oNp1K/iS+2elDj/eEntCH9BdocplPRQvKAQAAAABJRU5ErkJggg==');
+  }
+  $this select::-ms-expand {
+    display: none;
+  }
+  $this textarea {
+    min-height: 5em;
+  }
+  $this select[class=three-quarters],
+  $this input[class=three-quarters],
+  $this textarea[class=three-quarters] {
+    width: 74%;
+  }
+  $this select[class=quarter],
+  $this input[class=quarter],
+  $this textarea[class=quarter] {
+    margin-left: 2% !important;
+    width: 24%;
+  }
+  $this .split-input > select[class=three-quarters],
+  $this .split-input > input[class=three-quarters],
+  $this .split-input > textarea[class=three-quarters] {
+    width: 73%;
+  }
+  $this .split-input > select[class=quarter],
+  $this .split-input > input[class=quarter],
+  $this .split-input > textarea[class=quarter] {
+    margin-left: 4% !important;
+    width: 23%;
+  }
+  $this .split-input {
+    float: left;
+    width: 49%;
+    margin-bottom: 2%;
+  }
+  $this .split-input > input,
+  $this .split-input > select {
+    margin-bottom: 0;
+    width: 48%;
+  }
+  $this .split-input input:nth-child(even),
+  $this .split-input select:nth-child(even) {
+    margin-left: 2%;
+  }
+  $this select:nth-child(even),
+  $this input:nth-child(even),
+  $this .split-input:nth-child(even) {
+    margin-left: 2%;
+  }
+  $this .tooltip-inner {
+    padding: 7px;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 12pt;
+  }
+  $this [type=number]::-webkit-inner-spin-button,
+  $this [type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  $this [data-button] {
+    width: auto;
+    padding: .5em .75em;
+    font-size: 18pt;
+    font-weight: 700;
+    font-style: italic;
+    display: block;
+    margin: 1em auto .5em auto;
+  }
+  $this .lockit {
+    position: relative;
+  }
+  $this .lockit:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 24px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAACACAQAAABXPgRLAAAC10lEQVR4AczYBZIbMRBA0b8UTpYdZmZmJkPBMjMzg3ntvrniE0TSTBvqHcD1PSW1JIw6znCHDyQYZZEtDkiXHLDFIqMk+MAdzhi0YdRQzzW+MksSsUgyy1euUV9zIbTzhRUKiIcCK3yhvWZCuEQPKSSgFD1cqnoIEXo5QkI6opdI1UI4zk/SiJI0PzlehRCus4QoW+J6RUOo4wtHCPqO+EJdhUI4ST9SRv2crEAIzcwjZTZPc5lDaGcNqYA12ssYQivrSIWs01qmEM6wjFTQMmf0Q6CRMaTCxmnUD4kiVRBVDuERUiWPFENoZh8JoEiSHTZLdkhSRALYp1kvxH8A7tLHK67TykmaSk7SynVe0ceu/4BUCuGe5385wWNO/udc8JgJz+96TyGEJq/D4Rx3DXbcZc7rMNkUPuQF4ijLZxoMbmjgM1nE0YuQITSy4rwqbhr8cNN5xazQGC7kIeJklfaAd/1VxMnDUCGOy3KDFkMwtLDhtoWECKGTHGKV5KIhOC6SRKxydAYP+aSyELU2lE/BQ1y2yCFDeAy5bO0BQ2gjg1hk6FAJ6XD6rbZgIU8Qq4RBBwnE6kmAEBqIOizAiFpIxGFjidLgH9LMlP3iY9DDOGIxRbN/yBWHqftWNeStw+nhin/IE+tJKMdF1ZCL5KynuSf+IZ+tb4k7NKqGNLJjfYf87B9iX+rTBl1M25e7f0g3YtGjHtKDWHTbQ/yvtzH1kJj/tdceMohY/FUP+YtYDJYjJKoeEv3Xvn1bIRBDQQDc3q4BfBWY6JwiSoccz+GZt6ncZDJfHwgBAQEBAQEBAQEBAQEBWXzkmX1xO2R8cdDq4ZDq4pzjk32zSpfmSC5fKZc0D065fG1+tF+3V6TL9gfSJe1PQFoQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBCQrwgICAjID31N2qSk+/KUbHbkNUUFcs65wAAAAABJRU5ErkJggg==') no-repeat;
+    background-size: 20px 24px;
+    background-position: middle bottom;
+    position: absolute;
+    bottom: .25em;
+    right: 0;
+  }
+}
+@element form and (max-width: 450px) {
+  $this select,
+  $this .split-input,
+  $this .split-input > *,
+  $this input {
+    width: 100%;
+  }
+  $this .split-input {
+    margin-bottom: 0;
+  }
+  $this .split-input > input,
+  $this .split-input > select {
+    margin-bottom: 2%;
+    width: 100%;
+  }
+  $this select:nth-child(even),
+  $this input:nth-child(even),
+  $this .split-input:nth-child(even) {
+    margin-left: 0;
+  }
+  $this .lockit:after {
+    display: none;
+  }
+  $this .split-input > select[class=three-quarters],
+  $this .split-input > input[class=three-quarters],
+  $this .split-input > textarea[class=three-quarters] {
+    width: 74%;
+  }
+  $this .split-input > select[class=quarter],
+  $this .split-input > input[class=quarter],
+  $this .split-input > textarea[class=quarter] {
+    margin-left: 2% !important;
+    width: 24%;
+  }
+}
+/* Theme Support */
+[data-theme=default] form select,
+[data-theme=default] form .split-input > input,
+[data-theme=default] form .split-input > select,
+[data-theme=default] form input {
+  border: 1px solid rgba(255,255,255,.7) !important;
+  background: rgba(255,255,255,.5) !important;
+  box-shadow: rgba(0,0,0,.15) 0 1px 0 !important;
+  color: rgba(0,0,0,.7) !important;
+}
+[data-theme=default] form select:focus,
+[data-theme=default] form .split-input > *:focus,
+[data-theme=default] form input:focus {
+  border-color: orange !important;
+  box-shadow: #fc0 0 0 3px !important;
+}
+[data-theme=code] form select,
+[data-theme=code] form .split-input > input,
+[data-theme=code] form .split-input > select,
+[data-theme=code] form input {
+  border: 1px solid rgba(0,0,0,.25);
+  border-radius: 2px;
+  background: #002b36;
+  box-shadow: rgba(0,0,0,.15) 0 1px 0;
+  color: #eee8d5;
+}
+[data-theme=code] form select,
+[data-theme=code] form .split-input > select {
+  color: rgba(255,255,255,.3);
+}
+[data-theme=code] form select:focus,
+[data-theme=code] form .split-input > *:focus,
+[data-theme=code] form input:focus {
+  border-color: #2aa198;
+  box-shadow: #2aa198 0 0 3px;
+}
+[data-theme=dark] form select,
+[data-theme=dark] form .split-input > input,
+[data-theme=dark] form .split-input > select,
+[data-theme=dark] form input {
+  border: 1px solid rgba(0,0,0,.25);
+  border-radius: 2px;
+  background: rgba(0,0,0,.3);
+  box-shadow: rgba(0,0,0,.15) 0 1px 0;
+  color: rgba(255,255,255,.8);
+}
+[data-theme=dark] form select,
+[data-theme=dark] form .split-input > select {
+  color: rgba(255,255,255,.3);
+}
+[data-theme=dark] form select:focus,
+[data-theme=dark] form .split-input > *:focus,
+[data-theme=dark] form input:focus {
+  border-color: #6c71c4;
+  box-shadow: #6c71c4 0 0 3px;
+}
+@element form {
+  $this {
+    opacity: 1 !important;
+  }
+}
+  body {
+  font-family: 'Lato', sans-serif;
+}
+h1{
+  font-family:Cabin Sketch;
+  font-size:80px;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: grey;
+  background-color:  grey;
+}
+
+.overlay-content {
+  position: relative;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 80px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 50px}
+  .overlay .closebtn {
+  font-size: 60px;
+  top: 30px;
+  right: 55px;
+  }
+} 
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 60%;
+}
+
+
+  body{
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .flip-box {
+  background-color: transparent;
+  width: 350px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-box-back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
+  body {
+    position: relative; 
+  }
+  #section1 {padding-top:50px;height:500px;color: #fff; }
+  #section2 {padding-top:50px;height:500px;color: #fff; }
+  #section3 {padding-top:50px;height:500px;color: #fff; }
+  #section41 {padding-top:50px;height:500px;color: #fff; }
+  #section42 {padding-top:50px;height:500px;color: #fff; }
+  </style>
+</head>
+<body style="background-image: url('food7.jpeg'); background-size: 100vw 100vh; background-attachment: fixed; " data-spy="scroll" data-target=".navbar" data-offset="50">
+  <div style="height:100vh;width:100vw;position:fixed;top:0;left:0; background-color: rgba(0,0,0,0.9); z-index: -1;"></div>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="menu.html"><h1 style="font-family: 'Dancing Script', cursive;
+;font-size:60px;">Eat Streets<h1></a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <br><br>
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">trending food </a></li>&nbsp&nbsp&nbsp&nbsp&nbsp
+          <li><a href="#section2">Daily food</a></li>&nbsp&nbsp&nbsp&nbsp&nbsp
+          <li><a href="#section3">traditional food</a></li>
+        </ul> 
+        <form style="float:right;">
+  <input  class="glyphicon glyphicon-search"  class="form-control" id="myInput" type="text" placeholder="Search..." style="float:right;" align="right">
+</form>
+      </div>
+    </div>
+  </div> 
+</nav>    
+
+<br><br><br>
+<div class="container" id="section1"> 
+  <br><br><br>
+<p style="font-size:50px;">There is no sincerer love than the love of food.</p>
+  <br><br><br><br><br>   
+       <div class="row" >
+    <div class="col-md-4" >
+      <div class="thumbnail" >
+     <a href="#" >   
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="01.jpg" alt="Lights" style="width:350px;height:300px;">
+ </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button   class="myorder btn btn-success" data-toggle="modal" value="brown chopsticks" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+   </a>
+      <div class="caption">
+            <p>The Perfect Chocolate Chip Cookies</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+         
+<img src="02.jpg" alt="Lights" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+    <div style="width:350px;height:300px;background-color:grey;">
+
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class=" myorder btn btn-success" data-toggle="modal" value="chowmein" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+<div class="caption">
+            <p>Peach Cobbler</p>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="kungpaochiken.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class=" myorder btn btn-success" data-toggle="modal" value="kungpaochiken" data-target="#myModal">Buy Now</button>
+</div>
+
+    </div>
+  </div>
+</div>
+ <div class="caption">
+            <p>Vanilla Gelato</p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+       <div class="row" >
+    <div class="col-md-4" >
+      <div class="thumbnail" >
+     <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="04.jpg" alt="Lights" style="width:350px;height:300px;">
+ </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button" class="myorder btn btn-success" data-toggle="modal" value="mapotofu" data-target="#myModal">Buy Now</button>
+</div>
+
+    </div>
+  </div>
+</div>
+        
+          <div class="caption">
+            <p>Apple Pie Ice Cream Pie</p>
+          </div>
+        
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="5.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="pekingroasted" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+
+          <div class="caption">
+            <p>Todd's Snickerdoodles</p>
+          </div>
+        
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover">
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="5.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+ <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="longevity" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+ <div class="caption">
+            <p>Classic Carrot Cake</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+<div class="row" >
+    <div class="col-md-4" >
+      <div class="thumbnail" >
+     <a href="#" data-toggle="popover" title="chinese cost:$150" data-content="Some content inside the popover">   
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="06.jpg" alt="Lights" style="width:350px;height:300px;">
+ </div>
+    <div class="flip-box-back">
+  <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button" class="myorder btn btn-success" data-toggle="modal" value="wonton" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+        </a>
+          <div class="caption">
+            <p>Strawberry Rhubarb Cheesecake</p>
+          </div>
+        
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover">
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="07.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="springrolls" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+<div class="caption">
+            <p>Bananas Foster</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover">
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="steamed dumpling.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="steamed dumpling" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+ <div class="caption">
+            <p>Baked Alaska</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+ <div class="row" >
+    <div class="col-md-4" >
+      <div class="thumbnail" >
+     <a href="#" data-toggle="popover" title="chinese cost:$150" data-content="Some content inside the popover">   
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="08.jpg" alt="Lights" style="width:350px;height:300px;">
+ </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="sweet and sour pork" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+        </a>
+          <div class="caption">
+            <p>Boston Cream Pie</p>
+          </div>
+        
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover"> 
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="09.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="burger" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+  <div class="caption">
+            <p>Indiana Sugar Cream Pie</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover">
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="89.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+<div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="chowmein" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+<div class="caption">
+            <p>Molasses Pie</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<div class="row" >
+    <div class="col-md-4" >
+      <div class="thumbnail" >
+     <a href="#" data-toggle="popover" title="chinese cost:$150" data-content="Some content inside the popover">   
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="06.jpg" alt="Lights" style="width:350px;height:300px;">
+ </div>
+    <div class="flip-box-back">
+  <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button" class="myorder btn btn-success" data-toggle="modal" value="wonton" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+        </a>
+          <div class="caption">
+            <p>Strawberry Rhubarb Cheesecake</p>
+          </div>
+        
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover">
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="07.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="springrolls" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+<div class="caption">
+            <p>Bananas Foster</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover">
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="steamed dumpling.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="steamed dumpling" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+ <div class="caption">
+            <p>Baked Alaska</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+ <div class="row" >
+    <div class="col-md-4" >
+      <div class="thumbnail" >
+     <a href="#" data-toggle="popover" title="chinese cost:$150" data-content="Some content inside the popover">   
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="08.jpg" alt="Lights" style="width:350px;height:300px;">
+ </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="sweet and sour pork" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+        </a>
+          <div class="caption">
+            <p>Boston Cream Pie</p>
+          </div>
+        
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover"> 
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="09.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+   <div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="burger" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+  <div class="caption">
+            <p>Indiana Sugar Cream Pie</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="#" data-toggle="popover" title="<h1>chinese cost:$150</h1>" data-content="Some content inside the popover">
+          <div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+          <img src="89.jpg" alt="Nature" style="width:350px;height:300px;">
+          </div>
+    <div class="flip-box-back">
+<div style="width:350px;height:300px;background-color:grey;">
+<i style="color:black;font-size:20px;"></i><br>
+<i style="color:black;font-size:20px;"></i>
+<h3 style="font-family:verdana;">Price of dish:Rs 250 </h3><h3 style="font-family:verdana;">chinese special dish</h3>
+<button type="button"  class="myorder btn btn-success" data-toggle="modal" value="chowmein" data-target="#myModal">Buy Now</button>
+</div>
+    </div>
+  </div>
+</div>
+<div class="caption">
+            <p>Molasses Pie</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+<br><br><br><br>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="background-color:black;">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color:grey;>
+     <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" style="font-size:45px;">&times;</button>
+          <center><h1 class="modal-title" >order</h1></center></div>
+        <div class="modal-body">
+          <p style="font-size:30px;">Name Of Dish:&nbsp&nbsp&nbsp<input id="nod" type="text" style="color:black;" ></p>
+          <p style="font-size:30px;">No Of Items:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="noi" type="text" style="color:black;"></p>
+         <p style="font-size:30px;">Total Amount:&nbsp&nbsp&nbsp&nbsp&nbsp<input id="ta" type="text" style="color:black;"></p>
+        </div>
+        <div class="modal-footer">
+         <a href="billingform.html"> <button type="button" id="ok" class="btn btn-default" >ok</button>
+        </div>
+      </div>             
+      
+    </div>
+  </div>
+  
+</div>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".col-md-4 .thumbnail ").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(".myorder").click(function(){
+   $("#ta").val(' ');
+   $("#noi").val(' ');
+  x=$(this).val();
+  $("#nod").val(x);
+});
+$("#noi").keyup(function(){
+d=$(this).val();
+s=parseInt(d);
+g=250*s;
+$("#ta").val(g);  
+});
+$("#ok").click(function(){
+ function openNav() {
+            
+  document.getElementById("myNav").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.display = "none";
+} 
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="row">
+	<div class="col-sm-4">
+	<div id="my" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li  data-target="#my" data-slide-to="0" class="active"></li>
+						<li data-target="#my" data-slide-to="1" ></li>
+			<li    data-target="#my" data-slide-to="2"></li>	</ol>
+	<div class="carousel-inner">
+	<div class="item active"  id="45" ><img  id="9" src="E:\project wt\food4.jpeg"></div>
+	<div class="item" ><img src="E:\project wt\food4.jpeg"></div><div class="item" ><img src="E:\project wt\food4.jpeg"></div>							
+	<a class="left carousel-control" href="#my" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>							
+	<a class="right carousel-control" href="#my" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>	
+</div>
+</div>
+</div>
+<div class="col-sm-4">
+
+	<div id="my" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li  data-target="#my" data-slide-to="0" class="active"></li>
+						<li data-target="#my" data-slide-to="1" ></li>
+			<li    data-target="#my" data-slide-to="2"></li>	</ol>
+	<div class="carousel-inner">
+	<div class="item active" ><img  src="E:\project wt\food4.jpeg"></div>
+	<div class="item" ><img src="E:\project wt\food4.jpeg"></div><div class="item" ><img src="E:\project wt\food4.jpeg"></div>							
+	<a class="left carousel-control" href="#my" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>							
+	<a class="right carousel-control" href="#my" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>	
+</div>
+</div>
+</div>
+<div class="col-sm-4">
+	<div id="my" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li  data-target="#my" data-slide-to="0" class="active"></li>
+						<li data-target="#my" data-slide-to="1" ></li>
+			<li    data-target="#my" data-slide-to="2"></li>	</ol>
+	<div class="carousel-inner">
+	<div class="item active" id="23" ><img  src="E:\project wt\food4.jpeg"></div>
+	<div class="item" ><img src="E:\project wt\food4.jpeg"></div><div class="item" ><img src="E:\project wt\food4.jpeg"></div>							
+	<a class="left carousel-control" href="#my" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>							
+	<a class="right carousel-control" href="#my" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>	
+</div>
+</div>
+</div>
+	<div class="row">
+		<div class="col-sm-4" id="67">
+		
+		</div>
+			<div class="col-sm-4">
+				<img src="">
+		</div>
+			<div class="col-sm-4">
+				<img src="">
+		</div>
+
+		</div>
+	<script >
+$("#9").click(function(){
+var a=$(this).attr("src");
+$("#67").append("<a href='#' data-toggle='popover' title='Popover Header' data-content='Some content inside the popover'> <img id='3' src="+"'"+a+"'"+">"+"</a>");
+	$("#3").dblclick(function(){
+		$(this).remove();
+	});
+});
+
+
+
+</script>
+</body>
+</html>

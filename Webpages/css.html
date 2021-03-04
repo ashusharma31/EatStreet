@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); 
+  color: #f1f1f1;
+  padding: 20px;
+}
+
+.bg1
+{
+  
+  position: relative;
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.bg1 {
+ 
+  height: 100%;
+}
+
+
+.caption {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: #000;
+}
+
+
+.caption{
+  background-color: black;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  
+}
+ span.border { background-color: black;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+ overflow: hidden; }  
+ h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+.fix{
+position:absolute;
+top:45%;
+right:45%;
+color:black;
+font-size:30px;
+}
+
+</style>
+
+</head>
+<script>
+function changeImage() {
+  var image = document.getElementById('myImage');
+  if (image.src.match("like")) {
+    image.src = "liked.jpg";
+  } else {
+    image.src = "like.png";
+  }
+}
+</script>
+<body>
+<div class="fix"><h1 style="font-size:80px">fresh and Delicious</h1>traditional italian food to delight the whole family <br>
+<input type="button" value="Learn More" style="background-color:yellow"/></div>
+<script type="text/javascript">
+var images=['food9.jpg','food11.jpg','food4.jpeg','food8.jpg','photo2.jpg','food6.jpeg','food7.jpeg','food12.jpg'];
+var url=0;
+setInterval(function(){
+   url+=1;
+  if(url==8){
+    url=0;
+  }
+  document.body.style.backgroundImage = 'url('+images[url]+')';
+  document.body.style.backgroundRepeat = "no-repeat";
+ document.body.style.backgroundSize="100% 100%";
+  
+  },3000);
+</script>
+
+<div class="bg1">
+ <div class="caption">
+
+<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="float: right;">MENU
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+     <li><a href="#">Indian</a></li>
+     <li><a href="#">Chinese</a></li>
+     <li><a href="#">Junk</a></li>
+    </ul>
+<span class="border"><img src="viewlogo.png" class="img-rounded" style="width:10%;height:10%"/></span>
+<a href="login.html" style="right:30%">LOGIN</a>
+  </div>
+</div>
+
+
+<br><br><br>
+ <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/lights.jpg" target="_blank">
+          <img src="photo3.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>BREAKFAST</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/nature.jpg" target="_blank">
+          <img src="photo4.jpg" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p>LUNCH</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/fjords.jpg" target="_blank">
+          <img src="photo1.jpg" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p>DINNER</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<video width="auto" height="auto" controls>
+  <source src="C:\Users\Welcome\Videos\a.mp4" type="video/mp4">
+  
+</video>
+<br><br><br><br>
+<div class="jumbotron bg-warning" >
+<img src="like.png" id="myImage" onClick="changeImage()" height="10%" width="10%" class="img-circle"/>LIKE
+</div>
+</body></html>
